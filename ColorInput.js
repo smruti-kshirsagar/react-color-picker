@@ -6,6 +6,7 @@ class ColorInput extends React.Component {
         let colorDetails = {}
         colorDetails.colorName= this.refs.title.value
         colorDetails.color= this.refs.color.value
+        colorDetails.rating = 0;
         this.props.getDetails(colorDetails);
         this.refs.title.value = ""
     }

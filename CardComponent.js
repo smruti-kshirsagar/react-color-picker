@@ -4,7 +4,6 @@ class CardComponent extends React.Component {
     handleCloseCard(index) {
         this.props.getRemoveItem(index)
     }
-
     render() {
         let item = this.props.item
         let index = this.props.index
@@ -17,7 +16,9 @@ class CardComponent extends React.Component {
                 </div>
                 <div className="bg-color"
                 style={{background: item.color}}></div>
-                <Rating totalStar={5} />
+                <Rating totalStar={5} 
+                selectedStar={item.rating}
+                addRating={(stars) => this.props.handleSelectedStars(stars)} />
             </>
         )
     }

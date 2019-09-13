@@ -9,9 +9,11 @@ class CardList extends React.Component {
         return (
             <div>
                 {this.props.colors.map((item, i) => (
-                    <div className="card-wrapper col-lg-4" key={i}>
+                    <div className="card-wrapper" key={i}>
                         <CardComponent item={item} index={i} 
-                        getRemoveItem={(index) => this.setRemoveIndex(index)} />
+                        getRemoveItem={(index) => this.setRemoveIndex(index)} 
+                        handleSelectedStars={(stars) => this.props.getStars(stars, i)} 
+                        />
                     </div>
                 ))}
             </div>
